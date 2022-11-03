@@ -7,6 +7,7 @@ const router = express.Router();
 // CREATE - POST
 router.post('/', UserController.createNewUser);
 
+// READ - GET
 router.get('/', UserController.getAllUsers);
 
 
