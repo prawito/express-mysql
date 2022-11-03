@@ -1,5 +1,7 @@
 const express = require('express');
 
+const usersRoutes = require('./routes/users.js');
+
 const app = express();
 
 // app.method(path, handler);
@@ -7,14 +9,18 @@ const app = express();
 //     res.send('Hello World');
 // });
 
+app.use('/users', usersRoutes);
+
 app.get("/", (req, res) => {
-    res.send('Hello Get Method');
+    res.json({
+        nama: "Prawito",
+        email: "prawitohudoro@gmail.com"
+    });
 });
 
 app.post("/", (req, res) => {
     res.send('Hello POST Method');
 });
-
 
 
 app.listen(4000, () => {
